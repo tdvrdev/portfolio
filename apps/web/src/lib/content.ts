@@ -31,7 +31,7 @@ export type Profile = {
 }
 
 export const fallbackProfile: Profile = {
-  name: 'Jouw Naam',
+  name: 'Tdvr.dev',
   title: 'Creative Svelte Developer',
   intro:
     'Ik bouw snelle, expressieve webinterfaces met scherpe interacties, sterke contentstructuur en een visuele stijl die blijft hangen.',

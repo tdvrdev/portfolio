@@ -15,7 +15,7 @@ export const Profile: GlobalConfig = {
     {
       name: 'name',
       type: 'text',
-      defaultValue: 'Jouw Naam',
+      defaultValue: 'Tdvr.dev',
       required: true
     },
     {

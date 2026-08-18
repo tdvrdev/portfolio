@@ -51,7 +51,7 @@ const main = async () => {
       })).filter((social) => social.label && social.url)
     },
     projects: mapList(projectsResponse.docs, (project) => ({
-      id: project.id,
+      id: String(project.id),
       title: project.title,
       slug: project.slug,
       summary: project.summary,
@@ -67,7 +67,7 @@ const main = async () => {
       })).filter((link) => link.label && link.url)
     })).filter((project) => project.title && project.slug),
     skills: mapList(skillsResponse.docs, (skill) => ({
-      id: skill.id,
+      id: String(skill.id),
       name: skill.name,
       area: skill.area,
       level: skill.level,

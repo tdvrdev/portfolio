@@ -1,7 +1,7 @@
 {
   "exportedAt": "2026-06-22T21:45:01.951Z",
   "profile": {
-    "name": "Tdv.dev",
+    "name": "Tdvr.dev",
     "title": "Student Ict",
     "intro": "Ik duik graag in experimentele webinterfaces, gevoed door een goed blikje energy en dat heerlijke moment waarop de code klikt en de stress verdwijnt.",
     "location": "Nederland",
@@ -20,7 +20,7 @@
   },
   "projects": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Phantom Dashboard",
       "slug": "phantom-dashboard",
       "summary": "Mijn eigen portfolio gerealiseerd op basis van een geweldige game: Persona 5!\nEen stijlvol command center voor projecten, statistieken en content. Phantom Dashboard combineert stijlvol en informatief in 1 interface.",
@@ -41,7 +41,7 @@
       "links": []
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Private Gym website",
       "slug": "private-gym-website",
       "summary": "Voor dit project heb ik een verouderde website vernieuwd met een strak en modern redesign. Ik heb de bestaande structuur en uitstraling herwerkt naar een overzichtelijkere interface. Door persoonlijke omstandigheden is de site uiteindelijk niet online geplaatst.",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Kinetic Portfolio",
       "slug": "kinetic-portfolio",
       "summary": "Een portfolio-ervaring met diagonal cuts, comic-panel cards, sticky navigatie en keyboard-friendly interactiestates.",
@@ -95,42 +95,42 @@
   ],
   "skills": [
     {
-      "id": 1,
+      "id": "1",
       "name": "SvelteKit",
       "area": "Frontend",
       "level": 92,
       "highlight": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Payload CMS",
       "area": "CMS",
       "level": 84,
       "highlight": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "TypeScript",
       "area": "Frontend",
       "level": 88,
       "highlight": true
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Motion Design",
       "area": "Motion",
       "level": 80,
       "highlight": false
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "API Modeling",
       "area": "CMS",
       "level": 82,
       "highlight": false
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Tooling",
       "area": "Tooling",
       "level": 78,

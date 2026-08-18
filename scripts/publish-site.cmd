@@ -24,7 +24,7 @@ call "%ROOT%\scripts\pnpm.cmd" --filter @portfolio/web run build:static
 if errorlevel 1 exit /b 1
 
 git status --short
-git add apps/web/src/lib/generated-content.json scripts/publish-site.cmd
+git add .gitignore apps/web/src/app.css apps/web/src/routes/+page.svelte apps/web/src/lib/generated-content.json apps/web/src/lib/content.ts apps/cms/package.json apps/cms/next.config.ts apps/cms/tsconfig.json apps/cms/src/globals/Profile.ts apps/cms/src/seed.ts scripts/export-cms-content.mjs scripts/publish-site.cmd
 git diff --cached --quiet
 if errorlevel 1 (
   git commit -m "chore: publish portfolio content"

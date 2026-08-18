@@ -222,9 +222,13 @@
     class="relative z-[5] overflow-hidden border-y border-black/50 bg-loud-red py-2 text-white rotate-[-1deg] scale-x-[1.03]"
     aria-label="Technologie en focus"
   >
-    <div class="flex w-max animate-ticker motion-reduce:animate-none">
-      {#each [...tickerItems, ...tickerItems] as item}
-        <span class="inline-flex min-h-10 items-center whitespace-nowrap px-7 font-display text-xs font-black uppercase tracking-[.26em] after:ml-7 after:text-[.5rem] after:opacity-70 after:content-['◆'] max-sm:text-[.68rem]">{item}</span>
+    <div class="flex w-max animate-ticker [will-change:transform] motion-reduce:animate-none">
+      {#each [0, 1] as copy}
+        <div class="flex w-max min-w-[100vw] shrink-0 justify-around" aria-hidden={copy === 1}>
+          {#each tickerItems as item}
+            <span class="inline-flex min-h-10 items-center whitespace-nowrap px-7 font-display text-xs font-black uppercase tracking-[.26em] after:ml-7 after:text-[.5rem] after:opacity-70 after:content-['◆'] max-sm:text-[.68rem]">{item}</span>
+          {/each}
+        </div>
       {/each}
     </div>
   </section>

@@ -1,6 +1,7 @@
 node_modules
 .svelte-kit
 .next
+.next-cms
 build
 dist
 .env
