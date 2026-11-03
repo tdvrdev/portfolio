@@ -18,6 +18,16 @@ const fetchJson = async (pathName) => {
 
 const mapList = (items, mapper) => (Array.isArray(items) ? items.map(mapper) : [])
 
+const isPublicLink = (link) => {
+  try {
+    const url = new URL(link.url, 'https://tdvr.dev')
+    return ['http:', 'https:'].includes(url.protocol) &&
+      !['localhost', '127.0.0.1', '[::1]'].includes(url.hostname)
+  } catch {
+    return false
+  }
+}
+
 const main = async () => {
   let projectsResponse
   let skillsResponse
@@ -64,7 +74,7 @@ const main = async () => {
       links: mapList(project.links, (link) => ({
         label: link.label,
         url: link.url
-      })).filter((link) => link.label && link.url)
+      })).filter((link) => link.label && link.url && isPublicLink(link))
     })).filter((project) => project.title && project.slug),
     skills: mapList(skillsResponse.docs, (skill) => ({
       id: String(skill.id),

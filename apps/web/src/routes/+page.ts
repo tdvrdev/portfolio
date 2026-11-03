@@ -47,6 +47,16 @@ type GeneratedContent = {
   skills?: Skill[]
 }
 
+const isPublicLink = (link: { url: string }) => {
+  try {
+    const url = new URL(link.url, 'https://tdvr.dev')
+    return ['http:', 'https:'].includes(url.protocol) &&
+      !['localhost', '127.0.0.1', '[::1]'].includes(url.hostname)
+  } catch {
+    return false
+  }
+}
+
 const fetchJson = async <T>(fetchFn: typeof fetch, path: string): Promise<T | null> => {
   try {
     const response = await fetchFn(`${payloadUrl}${path}`)
@@ -89,7 +99,10 @@ export const load = async ({ fetch }) => {
         ...fallbackProfile,
         ...(generated.profile ?? {})
       },
-      projects: generated.projects?.length ? generated.projects : fallbackProjects,
+      projects: (generated.projects?.length ? generated.projects : fallbackProjects).map((project) => ({
+        ...project,
+        links: project.links.filter(isPublicLink)
+      })),
       skills: generated.skills?.length ? generated.skills : fallbackSkills
     }
   }

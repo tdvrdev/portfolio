@@ -10,7 +10,7 @@
     "socials": [
       {
         "label": "GitHub",
-        "url": "https://github.com/dtoerna-stack"
+        "url": "https://github.com/tdvrdev"
       },
       {
         "label": "LinkedIn",
@@ -59,12 +59,7 @@
         "Next.js",
         "SQLite"
       ],
-      "links": [
-        {
-          "label": "CMS",
-          "url": "http://localhost:3001/admin"
-        }
-      ]
+      "links": []
     },
     {
       "id": "3",
@@ -85,12 +80,7 @@
         "CSS Grid",
         "Responsive design"
       ],
-      "links": [
-        {
-          "label": "Preview",
-          "url": "http://localhost:5173/"
-        }
-      ]
+      "links": []
     }
   ],
   "skills": [

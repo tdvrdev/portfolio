@@ -39,7 +39,7 @@ export const fallbackProfile: Profile = {
   availability: 'Beschikbaar voor stages, freelance en creatieve webprojecten',
   email: 'hello@example.dev',
   socials: [
-    { label: 'GitHub', url: 'https://github.com/' },
+    { label: 'GitHub', url: 'https://github.com/tdvrdev' },
     { label: 'LinkedIn', url: 'https://linkedin.com/' }
   ]
 }
