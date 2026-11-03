@@ -87,7 +87,7 @@ const payload = await getPayload({ config })
 await payload.updateGlobal({
   slug: 'profile',
   data: {
-    name: 'Tdvr.dev',
+    name: 'tdvr.dev',
     title: 'Creative Svelte Developer',
     intro:
       'Ik bouw snelle, expressieve webinterfaces met scherpe interacties, sterke contentstructuur en een visuele stijl die blijft hangen.',

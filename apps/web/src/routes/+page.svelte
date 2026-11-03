@@ -101,6 +101,9 @@
 
 <svelte:head>
   <title>{data.profile.name} | Portfolio</title>
+  <link rel="canonical" href="https://tdvr.dev/" />
+  <meta property="og:site_name" content="tdvr.dev" />
+  <meta property="og:url" content="https://tdvr.dev/" />
 </svelte:head>
 
 <div

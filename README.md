@@ -1,18 +1,14 @@
-# Portfolio
+# tdvr.dev
 
 Een SvelteKit portfolio met een Payload CMS backend/admin.
 
 ## Starten
 
-Gebruik de lokale pnpm die in `.tools` staat:
+Gebruik Node.js en pnpm:
 
 ```powershell
-$nodeBin = 'C:\Users\Gebruiker\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin'
-$pnpmBin = "$PWD\.tools\pnpm\package\bin"
-$scriptBin = "$PWD\scripts"
-$env:PATH = "$nodeBin;$scriptBin;$pnpmBin;$env:PATH"
-& "$nodeBin\node.exe" '.tools\pnpm\package\bin\pnpm.cjs' install
-& "$nodeBin\node.exe" '.tools\pnpm\package\bin\pnpm.cjs' dev
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
 Of korter op Windows:
@@ -39,11 +35,7 @@ Maak bij de eerste CMS-open een admin gebruiker aan. De frontend toont alvast vo
 De voorbeeldcontent is al een keer geseed. Later opnieuw draaien kan zo:
 
 ```powershell
-$nodeBin = 'C:\Users\Gebruiker\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin'
-$pnpmBin = "$PWD\.tools\pnpm\package\bin"
-$scriptBin = "$PWD\scripts"
-$env:PATH = "$nodeBin;$scriptBin;$pnpmBin;$env:PATH"
-& "$nodeBin\node.exe" '.tools\pnpm\package\bin\pnpm.cjs' --filter @portfolio/cms seed
+pnpm --filter @portfolio/cms seed
 ```
 
 Belangrijke plekken:
@@ -83,6 +75,8 @@ Dat script exporteert Payload-content naar `apps/web/src/lib/generated-content.j
 
 ## Cloudflare Pages
 
+Het primaire domein is `https://tdvr.dev/`. Voeg `tdvr.dev` toe onder het Pages-project bij **Custom domains** en laat Cloudflare het apex-DNS-record aanmaken. Laat `www.tdvr.dev` daarna met een 301-redirect naar `https://tdvr.dev/` wijzen. De zone en het Pages-project moeten in hetzelfde Cloudflare-account staan.
+
 Kies in Cloudflare Pages deze instellingen:
 
 ```txt
@@ -102,14 +96,4 @@ De CMS-link wordt op productie verborgen zolang `PUBLIC_PAYLOAD_URL` niet is ing
 
 Deze repository is voorbereid om publiek te pushen. Lokale databases, `.env` bestanden, installatiemappen, build-output en logs staan in `.gitignore`.
 
-Maak lokaal nette commits met:
-
-```powershell
-.\scripts\commit-public-repo.cmd
-```
-
-Maak daarna op GitHub een lege repository, bijvoorbeeld `portfolio-persona-cms`, en koppel/push met:
-
-```powershell
-.\scripts\connect-github.cmd https://github.com/dtoerna-stack/portfolio-persona-cms.git
-```
+De remote van deze checkout is `https://github.com/tdvrdev/portfolio.git`.
