@@ -230,7 +230,7 @@ export interface Project {
 export interface Skill {
   id: number;
   name: string;
-  area: 'Frontend' | 'CMS' | 'Motion' | 'Tooling';
+  area: 'Allround' | 'Frontend' | 'Styling' | 'Backend' | 'Databases' | 'Testing' | 'CMS' | 'Motion' | 'Tooling';
   level: number;
   highlight?: boolean | null;
   order?: number | null;

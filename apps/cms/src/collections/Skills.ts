@@ -26,7 +26,12 @@ export const Skills: CollectionConfig = {
       type: 'select',
       defaultValue: 'Frontend',
       options: [
+        { label: 'Allround', value: 'Allround' },
         { label: 'Frontend', value: 'Frontend' },
+        { label: 'Styling', value: 'Styling' },
+        { label: 'Backend', value: 'Backend' },
+        { label: 'Databases', value: 'Databases' },
+        { label: 'Testing', value: 'Testing' },
         { label: 'CMS', value: 'CMS' },
         { label: 'Motion', value: 'Motion' },
         { label: 'Tooling', value: 'Tooling' }

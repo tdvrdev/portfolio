@@ -246,10 +246,11 @@
 
         <div class="grid grid-cols-3 gap-5 max-[900px]:grid-cols-1" aria-label="Projecten">
           {#each data.projects as project, index}
+            {@const fullWidth = project.slug.toLowerCase() === 'kledingdokter-website'}
             <article
-              class={`group relative isolate min-h-[24rem] overflow-hidden border border-loud-red/25 bg-[#0e0e17] p-6 transition [clip-path:polygon(0_0,100%_0,100%_90%,94%_100%,0_100%)] before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:transition before:content-[''] after:absolute after:right-0 after:top-0 after:size-0 after:border-l-[28px] after:border-t-[28px] after:border-l-transparent after:border-t-loud-red after:opacity-75 after:content-[''] hover:-translate-y-1 hover:border-loud-red/80 hover:before:scale-x-100 ${index === 0 ? 'md:col-span-2' : ''} ${accentPanel[project.accent]}`}
+              class={`group relative isolate overflow-hidden border border-loud-red/25 bg-[#0e0e17] p-6 transition [clip-path:polygon(0_0,100%_0,100%_90%,94%_100%,0_100%)] before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:transition before:content-[''] after:absolute after:right-0 after:top-0 after:size-0 after:border-l-[28px] after:border-t-[28px] after:border-l-transparent after:border-t-loud-red after:opacity-75 after:content-[''] hover:-translate-y-1 hover:border-loud-red/80 hover:before:scale-x-100 ${fullWidth ? 'col-span-full' : 'min-h-[24rem]'} ${index === 0 && !fullWidth ? 'min-[900px]:col-span-2' : ''} ${accentPanel[project.accent]}`}
             >
-              <div class="mb-14 flex justify-between gap-3 font-display text-xs font-black uppercase tracking-[.18em] text-paper/35">
+              <div class={`flex justify-between gap-3 font-display text-xs font-black uppercase tracking-[.18em] text-paper/35 ${fullWidth ? 'mb-8' : 'mb-14'}`}>
                 <span>{project.year}</span>
                 <span class={statusTone[project.status]}>{statusLabels[project.status]}</span>
               </div>

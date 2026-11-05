@@ -1,6 +1,7 @@
 import { getPayload } from 'payload'
 
 import config from './payload.config'
+import type { Skill } from './payload-types'
 
 type ProjectSeed = {
   accent: 'red' | 'cyan' | 'yellow' | 'white'
@@ -18,7 +19,7 @@ type ProjectSeed = {
 }
 
 type SkillSeed = {
-  area: 'Frontend' | 'CMS' | 'Motion' | 'Tooling'
+  area: Skill['area']
   highlight: boolean
   level: number
   name: string

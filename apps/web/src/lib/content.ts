@@ -15,7 +15,7 @@ export type Project = {
 export type Skill = {
   id: string
   name: string
-  area: 'Frontend' | 'CMS' | 'Motion' | 'Tooling'
+  area: 'Allround' | 'Frontend' | 'Styling' | 'Backend' | 'Databases' | 'Testing' | 'CMS' | 'Motion' | 'Tooling'
   level: number
   highlight: boolean
 }

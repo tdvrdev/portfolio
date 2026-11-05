@@ -1,11 +1,11 @@
 {
-  "exportedAt": "2026-06-22T21:45:01.951Z",
+  "exportedAt": "2026-11-05T20:56:05.892Z",
   "profile": {
     "name": "tdvr.dev",
-    "title": "Student Ict",
+    "title": "Creative Developer",
     "intro": "Ik duik graag in experimentele webinterfaces, gevoed door een goed blikje energy en dat heerlijke moment waarop de code klikt en de stress verdwijnt.",
     "location": "Nederland",
-    "availability": "Beschikbaar voor websites, designs en dergelijken.",
+    "availability": "Beschikbaar voor stages, design en creatieve webprojecten",
     "email": "tdvrdev@gmail.com",
     "socials": [
       {
@@ -14,7 +14,7 @@
       },
       {
         "label": "LinkedIn",
-        "url": "https://www.linkedin.com/in/tdv-dev-toerna-de-vries-1737053aa/"
+        "url": "https://www.linkedin.com/in/tdvr-dev"
       }
     ]
   },
@@ -63,24 +63,29 @@
     },
     {
       "id": "3",
-      "title": "Kinetic Portfolio",
-      "slug": "kinetic-portfolio",
-      "summary": "Een portfolio-ervaring met diagonal cuts, comic-panel cards, sticky navigatie en keyboard-friendly interactiestates.",
-      "role": "Design, frontend, accessibility",
+      "title": "Website de Kledingdokter",
+      "slug": "Kledingdokter-website",
+      "summary": "Een vernieuwde website met een efficiënte lay-out. De nieuwe site maakt de aantrekkingskracht groter en versimpelt zoekwerk voor de gebruikers. ",
+      "role": "4 maanden (veel afwezig door school)",
       "year": 2026,
-      "status": "concept",
+      "status": "prototype",
       "accent": "yellow",
       "tags": [
-        "Portfolio",
-        "Design",
-        "Accessibility"
+        "Vernieuwing ",
+        "Efficiëntie ",
+        "Optimalisatie "
       ],
       "stack": [
-        "Svelte",
-        "CSS Grid",
-        "Responsive design"
+        "HTML",
+        "CSS",
+        "JavaScript"
       ],
-      "links": []
+      "links": [
+        {
+          "label": "Live site",
+          "url": "https://www.dekledingdokter.nl"
+        }
+      ]
     }
   ],
   "skills": [
@@ -88,43 +93,43 @@
       "id": "1",
       "name": "SvelteKit",
       "area": "Frontend",
-      "level": 92,
+      "level": 75,
+      "highlight": true
+    },
+    {
+      "id": "4",
+      "name": "HTML",
+      "area": "Frontend",
+      "level": 90,
       "highlight": true
     },
     {
       "id": "2",
       "name": "Payload CMS",
       "area": "CMS",
-      "level": 84,
+      "level": 50,
+      "highlight": true
+    },
+    {
+      "id": "5",
+      "name": "CSS",
+      "area": "Styling",
+      "level": 90,
       "highlight": true
     },
     {
       "id": "3",
       "name": "TypeScript",
       "area": "Frontend",
-      "level": 88,
+      "level": 70,
       "highlight": true
     },
     {
-      "id": "4",
-      "name": "Motion Design",
-      "area": "Motion",
-      "level": 80,
-      "highlight": false
-    },
-    {
-      "id": "5",
-      "name": "API Modeling",
-      "area": "CMS",
-      "level": 82,
-      "highlight": false
-    },
-    {
       "id": "6",
-      "name": "Tooling",
-      "area": "Tooling",
-      "level": 78,
-      "highlight": false
+      "name": "C#",
+      "area": "Allround",
+      "level": 50,
+      "highlight": true
     }
   ]
 }
