@@ -84,6 +84,7 @@ export const Projects: CollectionConfig = {
     {
       name: 'tags',
       type: 'array',
+      label: 'Keywords',
       fields: [
         {
           name: 'name',

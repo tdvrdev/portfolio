@@ -136,3 +136,375 @@
     opacity: 0.25;
   }
 }
+
+/* ---------- Intro: drie diagonale panelen schuiven weg ---------- */
+.intro-wipe {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.intro-wipe span {
+  position: absolute;
+  inset: -20% -30%;
+  transform: skewX(-18deg);
+  animation: wipe-out 720ms cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.intro-wipe span:nth-child(1) {
+  background: #050505;
+  animation-delay: 300ms;
+}
+
+.intro-wipe span:nth-child(2) {
+  background: #ef1019;
+  animation-delay: 190ms;
+}
+
+.intro-wipe span:nth-child(3) {
+  background: #f6f2e9;
+  animation-delay: 80ms;
+}
+
+@keyframes wipe-out {
+  to {
+    transform: translateX(112%) skewX(-18deg);
+    visibility: hidden;
+  }
+}
+
+/* ---------- Hero: letters vallen een voor een op hun plek ---------- */
+.hero-letter {
+  display: inline-block;
+  animation: letter-slam 520ms cubic-bezier(0.18, 0.96, 0.2, 1) backwards;
+  animation-delay: calc(560ms + var(--i) * 55ms);
+  transition:
+    translate 140ms ease-out,
+    rotate 140ms ease-out,
+    color 140ms ease-out;
+}
+
+.hero-letter:hover {
+  color: #ef1019;
+  text-shadow: 0.06em 0.06em 0 #f6f2e9;
+  translate: 0 -0.07em;
+  rotate: -5deg;
+}
+
+.hero-letter:nth-child(even):hover {
+  rotate: 5deg;
+}
+
+@keyframes letter-slam {
+  from {
+    opacity: 0;
+    translate: 0 -0.55em;
+    rotate: -12deg;
+    scale: 1.25;
+  }
+}
+
+/* ---------- Scroll-onthulling ---------- */
+.js [data-reveal] {
+  opacity: 0;
+}
+
+.js [data-reveal].is-in {
+  opacity: 1;
+  animation: reveal-up 640ms cubic-bezier(0.18, 0.96, 0.2, 1) var(--reveal-delay, 0ms) backwards;
+}
+
+.js [data-reveal="slash"].is-in {
+  animation-name: reveal-slash;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    translate: 0 2rem;
+    rotate: 1.2deg;
+  }
+}
+
+@keyframes reveal-slash {
+  from {
+    opacity: 0;
+    translate: -2.5rem 0;
+    clip-path: polygon(0 0, 0 0, -10% 100%, -10% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 110% 0, 100% 100%, 0 100%);
+  }
+}
+
+/* ---------- Projectkaarten: kantelen en spotlight ---------- */
+.tilt-card {
+  transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+}
+
+.card-spot {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    22rem circle at var(--mx, 50%) var(--my, 50%),
+    rgba(239, 16, 25, 0.2),
+    transparent 62%
+  );
+  transition: opacity 250ms ease-out;
+}
+
+.tilt-card:hover .card-spot {
+  opacity: 1;
+}
+
+.banner-shine {
+  position: absolute;
+  inset-block: -20%;
+  left: 0;
+  z-index: -1;
+  width: 5rem;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.11), transparent);
+  transform: translateX(-12rem) skewX(-25deg);
+  animation: banner-shine 7s cubic-bezier(0.6, 0, 0.3, 1) 1.4s infinite;
+}
+
+@keyframes banner-shine {
+  0% {
+    transform: translateX(-12rem) skewX(-25deg);
+  }
+  28%,
+  100% {
+    transform: translateX(90rem) skewX(-25deg);
+  }
+}
+
+/* ---------- Dossiervenster ---------- */
+.dossier {
+  width: min(46rem, calc(100vw - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.dossier[open] {
+  animation: dossier-in 440ms cubic-bezier(0.18, 0.96, 0.2, 1) backwards;
+}
+
+.dossier::backdrop {
+  background:
+    repeating-linear-gradient(115deg, rgba(239, 16, 25, 0.14) 0 2px, transparent 2px 16px),
+    rgba(5, 5, 5, 0.88);
+  animation: backdrop-in 260ms ease-out backwards;
+}
+
+.dossier-panel {
+  box-shadow: 10px 10px 0 rgba(155, 0, 7, 0.55);
+  animation: panel-swap 300ms cubic-bezier(0.18, 0.96, 0.2, 1) backwards;
+}
+
+.dossier-chip {
+  animation: chip-in 320ms cubic-bezier(0.18, 0.96, 0.2, 1) backwards;
+  animation-delay: calc(180ms + var(--i) * 45ms);
+}
+
+html:has(.dossier[open]) {
+  overflow: hidden;
+}
+
+@keyframes dossier-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) rotate(-2.5deg) scale(0.94);
+    clip-path: polygon(0 0, 0 0, -12% 100%, -12% 100%);
+  }
+  to {
+    clip-path: polygon(-5% -5%, 115% -5%, 105% 105%, -5% 105%);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes panel-swap {
+  from {
+    opacity: 0.4;
+    translate: 1.25rem 0;
+  }
+}
+
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    translate: -0.5rem 0;
+    scale: 0.9;
+  }
+}
+
+/* ---------- Velvet Room: vlinder en gouden stofjes ---------- */
+.butterfly {
+  position: absolute;
+  top: 46%;
+  left: 0;
+  fill: #6fb6ff;
+  filter: drop-shadow(0 0 6px rgba(80, 160, 255, 0.9)) drop-shadow(0 0 18px rgba(60, 120, 255, 0.5));
+  animation: butterfly-drift 22s ease-in-out infinite;
+}
+
+.butterfly .wing {
+  transform-box: view-box;
+  transform-origin: 20px 16px;
+  animation: wing-flap 260ms ease-in-out infinite alternate;
+}
+
+.butterfly-body {
+  stroke: #d9ecff;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+@keyframes wing-flap {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.22);
+  }
+}
+
+@keyframes butterfly-drift {
+  0% {
+    translate: 6vw 1.5rem;
+    rotate: 14deg;
+  }
+  25% {
+    translate: 30vw -2.5rem;
+    rotate: 2deg;
+  }
+  50% {
+    translate: 86vw 0.5rem;
+    rotate: 16deg;
+  }
+  50.01% {
+    translate: 86vw 0.5rem;
+    rotate: -16deg;
+  }
+  75% {
+    translate: 60vw -3rem;
+    rotate: -4deg;
+  }
+  100% {
+    translate: 6vw 1.5rem;
+    rotate: -14deg;
+  }
+}
+
+.mote {
+  position: absolute;
+  bottom: -6px;
+  left: var(--x);
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #f0c84a;
+  box-shadow: 0 0 8px rgba(240, 200, 74, 0.9);
+  opacity: 0;
+  animation: mote-rise var(--t) linear var(--d) infinite;
+}
+
+@keyframes mote-rise {
+  0% {
+    opacity: 0;
+    translate: 0 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    translate: 1.5rem -13rem;
+  }
+}
+
+.skill-fill::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  width: 1.5rem;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85));
+}
+
+/* ---------- Klik: korte ster ---------- */
+.click-burst {
+  position: fixed;
+  z-index: 65;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  pointer-events: none;
+  background: radial-gradient(circle, #ffd23f 0 24%, #ef1019 25%);
+  clip-path: polygon(
+    50% 0,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  animation: click-burst 420ms cubic-bezier(0.18, 0.96, 0.2, 1) forwards;
+}
+
+@keyframes click-burst {
+  from {
+    opacity: 1;
+    transform: scale(0.15) rotate(-30deg);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.25) rotate(25deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .intro-wipe,
+  .banner-shine,
+  .butterfly,
+  .mote {
+    display: none;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+  }
+
+  .js [data-reveal].is-in,
+  .hero-letter,
+  .dossier[open],
+  .dossier::backdrop,
+  .dossier-panel,
+  .dossier-chip {
+    animation: none;
+  }
+}

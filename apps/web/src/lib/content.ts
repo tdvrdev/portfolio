@@ -32,9 +32,9 @@ export type Profile = {
 
 export const fallbackProfile: Profile = {
   name: 'tdvr.dev',
-  title: 'Creative Svelte Developer',
+  title: 'Projecten, skills en ervaringen',
   intro:
-    'Ik bouw snelle, expressieve webinterfaces met scherpe interacties, sterke contentstructuur en een visuele stijl die blijft hangen.',
+    'Ik houd hier bij wat ik maak, welke skills ik gebruik en wat ik onderweg leer.',
   location: 'Nederland',
   availability: 'Beschikbaar voor stages, freelance en creatieve webprojecten',
   email: 'hello@example.dev',
@@ -51,11 +51,11 @@ export const fallbackProjects: Project[] = [
     slug: 'phantom-dashboard',
     summary:
       'Een high-contrast dashboardconcept met live statuskaarten, custom filters en micro-interacties voor snelle besluitvorming.',
-    role: 'Frontend, motion, UI systems',
+    role: 'Frontend en interfaceontwerp',
     year: 2026,
     status: 'prototype',
     accent: 'red',
-    tags: ['SvelteKit', 'Motion', 'Dashboard'],
+    tags: ['Portfolio', 'Game-inspiratie', 'Interactie'],
     stack: ['SvelteKit', 'TypeScript', 'CSS animations'],
     links: [{ label: 'Case', url: '#projects' }]
   },
@@ -69,7 +69,7 @@ export const fallbackProjects: Project[] = [
     year: 2026,
     status: 'live',
     accent: 'cyan',
-    tags: ['Payload CMS', 'Content', 'API'],
+    tags: ['Contentbeheer', 'Datamodel', 'Integratie'],
     stack: ['Payload', 'Next.js', 'SQLite'],
     links: [{ label: 'CMS', url: 'http://localhost:3001/admin' }]
   },
@@ -93,7 +93,6 @@ export const fallbackSkills: Skill[] = [
   { id: 'skill-01', name: 'SvelteKit', area: 'Frontend', level: 92, highlight: true },
   { id: 'skill-02', name: 'Payload CMS', area: 'CMS', level: 84, highlight: true },
   { id: 'skill-03', name: 'TypeScript', area: 'Frontend', level: 88, highlight: true },
-  { id: 'skill-04', name: 'Motion Design', area: 'Motion', level: 80, highlight: false },
   { id: 'skill-05', name: 'API Modeling', area: 'CMS', level: 82, highlight: false },
   { id: 'skill-06', name: 'Tooling', area: 'Tooling', level: 78, highlight: false }
 ]

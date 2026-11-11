@@ -2,8 +2,8 @@
   "exportedAt": "2026-11-05T20:56:05.892Z",
   "profile": {
     "name": "tdvr.dev",
-    "title": "Creative Developer",
-    "intro": "Ik duik graag in experimentele webinterfaces, gevoed door een goed blikje energy en dat heerlijke moment waarop de code klikt en de stress verdwijnt.",
+    "title": "Projecten, skills en ervaringen",
+    "intro": "Ik houd hier bij wat ik maak, welke skills ik gebruik en wat ik onderweg leer.",
     "location": "Nederland",
     "availability": "Beschikbaar voor stages, design en creatieve webprojecten",
     "email": "tdvrdev@gmail.com",
@@ -29,9 +29,9 @@
       "status": "live",
       "accent": "red",
       "tags": [
-        "SvelteKit",
-        "Typescript",
-        "Tailwind"
+        "Portfolio",
+        "Game-inspiratie",
+        "Interactie"
       ],
       "stack": [
         "SvelteKit",
@@ -50,9 +50,9 @@
       "status": "prototype",
       "accent": "cyan",
       "tags": [
-        "Payload CMS",
-        "Content",
-        "API"
+        "Herontwerp",
+        "Overzicht",
+        "Gebruiksgemak"
       ],
       "stack": [
         "Payload",
@@ -71,9 +71,9 @@
       "status": "prototype",
       "accent": "yellow",
       "tags": [
-        "Vernieuwing ",
-        "Efficiëntie ",
-        "Optimalisatie "
+        "Vernieuwing",
+        "Efficiëntie",
+        "Optimalisatie"
       ],
       "stack": [
         "HTML",

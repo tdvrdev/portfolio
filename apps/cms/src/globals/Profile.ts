@@ -21,14 +21,13 @@ export const Profile: GlobalConfig = {
     {
       name: 'title',
       type: 'text',
-      defaultValue: 'Creative Svelte Developer',
+      defaultValue: 'Projecten, skills en ervaringen',
       required: true
     },
     {
       name: 'intro',
       type: 'textarea',
-      defaultValue:
-        'Ik bouw snelle, expressieve webinterfaces met scherpe interacties, sterke contentstructuur en een visuele stijl die blijft hangen.',
+      defaultValue: 'Ik houd hier bij wat ik maak, welke skills ik gebruik en wat ik onderweg leer.',
       required: true
     },
     {

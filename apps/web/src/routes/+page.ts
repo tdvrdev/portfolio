@@ -80,7 +80,7 @@ const mapProject = (project: PayloadProject): Project => ({
   year: project.year ?? new Date().getFullYear(),
   status: project.status ?? 'concept',
   accent: project.accent ?? 'red',
-  tags: project.tags?.map((tag) => tag.name).filter(Boolean) as string[],
+  tags: project.tags?.flatMap(({ name }) => (name?.trim() ? [name.trim()] : [])) ?? [],
   stack: project.stack?.map((item) => item.name).filter(Boolean) as string[],
   links:
     project.links

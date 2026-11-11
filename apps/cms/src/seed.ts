@@ -32,13 +32,13 @@ const projects: ProjectSeed[] = [
     slug: 'phantom-dashboard',
     summary:
       'Een high-contrast dashboardconcept met live statuskaarten, custom filters en micro-interacties voor snelle besluitvorming.',
-    role: 'Frontend, motion, UI systems',
+    role: 'Frontend en interfaceontwerp',
     year: 2026,
     status: 'prototype',
     accent: 'red',
     featured: true,
     order: 1,
-    tags: [{ name: 'SvelteKit' }, { name: 'Motion' }, { name: 'Dashboard' }],
+    tags: [{ name: 'Portfolio' }, { name: 'Game-inspiratie' }, { name: 'Interactie' }],
     stack: [{ name: 'SvelteKit' }, { name: 'TypeScript' }, { name: 'CSS animations' }],
     links: [{ label: 'Case', url: 'http://localhost:5173/#projects' }]
   },
@@ -53,7 +53,7 @@ const projects: ProjectSeed[] = [
     accent: 'cyan',
     featured: true,
     order: 2,
-    tags: [{ name: 'Payload CMS' }, { name: 'Content' }, { name: 'API' }],
+    tags: [{ name: 'Contentbeheer' }, { name: 'Datamodel' }, { name: 'Integratie' }],
     stack: [{ name: 'Payload' }, { name: 'Next.js' }, { name: 'SQLite' }],
     links: [{ label: 'CMS', url: 'http://localhost:3001/admin' }]
   },
@@ -78,7 +78,6 @@ const skills: SkillSeed[] = [
   { name: 'SvelteKit', area: 'Frontend', level: 92, highlight: true, order: 1 },
   { name: 'Payload CMS', area: 'CMS', level: 84, highlight: true, order: 2 },
   { name: 'TypeScript', area: 'Frontend', level: 88, highlight: true, order: 3 },
-  { name: 'Motion Design', area: 'Motion', level: 80, highlight: false, order: 4 },
   { name: 'API Modeling', area: 'CMS', level: 82, highlight: false, order: 5 },
   { name: 'Tooling', area: 'Tooling', level: 78, highlight: false, order: 6 }
 ] 
@@ -89,9 +88,8 @@ await payload.updateGlobal({
   slug: 'profile',
   data: {
     name: 'tdvr.dev',
-    title: 'Creative Svelte Developer',
-    intro:
-      'Ik bouw snelle, expressieve webinterfaces met scherpe interacties, sterke contentstructuur en een visuele stijl die blijft hangen.',
+    title: 'Projecten, skills en ervaringen',
+    intro: 'Ik houd hier bij wat ik maak, welke skills ik gebruik en wat ik onderweg leer.',
     location: 'Nederland',
     availability: 'Beschikbaar voor stages, freelance en creatieve webprojecten',
     email: 'hello@example.dev',
