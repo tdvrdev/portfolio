@@ -145,7 +145,24 @@
     white: 'before:bg-paper'
   } as const
 
-  const tickerItems = ['Projecten', 'Ontwerp', 'Realisatie', 'Skills', 'Ervaringen']
+  // Vaste archieftermen afgewisseld met de keywords en skills van de site.
+  const tickerItems = $derived.by(() => {
+    const groups = [
+      ['Projecten', 'Ontwerp', 'Realisatie', 'Skills', 'Ervaringen'],
+      data.projects.flatMap((project) => project.tags.map((tag) => tag.trim())),
+      data.skills.map((skill) => skill.name)
+    ]
+    const mixed: string[] = []
+    const longest = Math.max(...groups.map((group) => group.length))
+
+    for (let i = 0; i < longest; i++) {
+      for (const group of groups) {
+        if (group[i]) mixed.push(group[i])
+      }
+    }
+
+    return [...new Set(mixed)]
+  })
 
   const processCards = [
     {
@@ -362,7 +379,7 @@
     class="relative z-[5] overflow-hidden border-y border-black/50 bg-loud-red py-2 text-white rotate-[-1deg] scale-x-[1.03]"
     aria-label="Inhoud van het archief"
   >
-    <div class="flex w-max animate-ticker [will-change:transform] motion-reduce:animate-none">
+    <div class="flex w-max animate-ticker [will-change:transform] motion-reduce:animate-none" style={`animation-duration: ${tickerItems.length * 2.4}s`}>
       {#each [0, 1] as copy}
         <div class="flex w-max min-w-[100vw] shrink-0 justify-around" aria-hidden={copy === 1}>
           {#each tickerItems as item}
